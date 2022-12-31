@@ -10,9 +10,10 @@
 		A357A6CA29564083002EB149 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357A6C929564083002EB149 /* AppDelegate.swift */; };
 		A357A6CC29564083002EB149 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357A6CB29564083002EB149 /* SceneDelegate.swift */; };
 		A357A6CE29564083002EB149 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357A6CD29564083002EB149 /* ViewController.swift */; };
-		A357A6D129564083002EB149 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A357A6CF29564083002EB149 /* Main.storyboard */; };
 		A357A6D329564086002EB149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A357A6D229564086002EB149 /* Assets.xcassets */; };
 		A357A6D629564086002EB149 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A357A6D429564086002EB149 /* LaunchScreen.storyboard */; };
+		A359B1922958473E009A874C /* Extension Time Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359B1912958473E009A874C /* Extension Time Interval.swift */; };
+		A39E5856296051DB00928EF4 /* Extension CA Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39E5855296051DB00928EF4 /* Extension CA Layer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +21,11 @@
 		A357A6C929564083002EB149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A357A6CB29564083002EB149 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A357A6CD29564083002EB149 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A357A6D029564083002EB149 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A357A6D229564086002EB149 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A357A6D529564086002EB149 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A357A6D729564086002EB149 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A359B1912958473E009A874C /* Extension Time Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension Time Interval.swift"; path = "iOS8-HW12-Yuliya Khrebtova/Sources/Extension Time Interval.swift"; sourceTree = SOURCE_ROOT; };
+		A39E5855296051DB00928EF4 /* Extension CA Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension CA Layer.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,40 @@
 		A357A6C829564083002EB149 /* iOS8-HW12-Yuliya Khrebtova */ = {
 			isa = PBXGroup;
 			children = (
-				A357A6C929564083002EB149 /* AppDelegate.swift */,
-				A357A6CB29564083002EB149 /* SceneDelegate.swift */,
+				A357A6DE295642CF002EB149 /* Resources */,
+				A357A6DD295642BD002EB149 /* Sources */,
+			);
+			path = "iOS8-HW12-Yuliya Khrebtova";
+			sourceTree = "<group>";
+		};
+		A357A6DD295642BD002EB149 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A357A6DF295642E9002EB149 /* App */,
 				A357A6CD29564083002EB149 /* ViewController.swift */,
-				A357A6CF29564083002EB149 /* Main.storyboard */,
+				A359B1912958473E009A874C /* Extension Time Interval.swift */,
+				A39E5855296051DB00928EF4 /* Extension CA Layer.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		A357A6DE295642CF002EB149 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				A357A6D229564086002EB149 /* Assets.xcassets */,
 				A357A6D429564086002EB149 /* LaunchScreen.storyboard */,
 				A357A6D729564086002EB149 /* Info.plist */,
 			);
-			path = "iOS8-HW12-Yuliya Khrebtova";
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A357A6DF295642E9002EB149 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A357A6C929564083002EB149 /* AppDelegate.swift */,
+				A357A6CB29564083002EB149 /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +154,6 @@
 			files = (
 				A357A6D629564086002EB149 /* LaunchScreen.storyboard in Resources */,
 				A357A6D329564086002EB149 /* Assets.xcassets in Resources */,
-				A357A6D129564083002EB149 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +164,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A39E5856296051DB00928EF4 /* Extension CA Layer.swift in Sources */,
 				A357A6CE29564083002EB149 /* ViewController.swift in Sources */,
 				A357A6CA29564083002EB149 /* AppDelegate.swift in Sources */,
 				A357A6CC29564083002EB149 /* SceneDelegate.swift in Sources */,
+				A359B1922958473E009A874C /* Extension Time Interval.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A357A6CF29564083002EB149 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A357A6D029564083002EB149 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A357A6D429564086002EB149 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,10 +309,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8AGR6C32QD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS8-HW12-Yuliya Khrebtova/Info.plist";
+				INFOPLIST_FILE = "iOS8-HW12-Yuliya Khrebtova/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -317,10 +336,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8AGR6C32QD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS8-HW12-Yuliya Khrebtova/Info.plist";
+				INFOPLIST_FILE = "iOS8-HW12-Yuliya Khrebtova/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
