@@ -8,7 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    // MARK: - Outlets
+
+    // MARK: - Properties
 
     private var timer: Timer = Timer()
     private var count = 0.0
@@ -17,8 +18,9 @@ class ViewController: UIViewController {
     private var isStartButtonPressed = false
     private let workTime = 25.0
     private let restTime = 10.0
-
     private let progressBarSize = 300.0
+
+    // MARK: - Outlets
     private let backgroundLayer = CAShapeLayer()
     private let shapeLayer = CAShapeLayer()
     private let gradientLayer = CAGradientLayer()
@@ -69,7 +71,7 @@ class ViewController: UIViewController {
         setupHierarchy()
         setupLayout()
 
-        count = workTime
+        countWorkingTime()
     }
 
     // MARK: - Setup
@@ -106,6 +108,10 @@ class ViewController: UIViewController {
         ])
     }
 
+    private func countWorkingTime() {
+        count = workTime
+    }
+
     // MARK: - Actions
 
     @objc private func pressedButton() {
@@ -123,7 +129,11 @@ class ViewController: UIViewController {
 
             shapeLayer.resumeAnimation()
             button.setImage(pauseImage, for: .normal)
-            timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.001,
+                                         target: self,
+                                         selector: #selector(timerAction),
+                                         userInfo: nil,
+                                         repeats: true)
         } else {
             timer.invalidate()
             shapeLayer.pauseAnimation()
@@ -131,12 +141,21 @@ class ViewController: UIViewController {
             }
     }
 
+    func runningTime() {
+        if isWorkTime {
+            count -= timer.timeInterval
+        } else if !isWorkTime {
+            count -= timer.timeInterval
+        }
+    }
+
     @objc func timerAction(timer: Timer) {
-        let playImage = UIImage(systemName: "play.fill", withConfiguration: configSymbol)
-        count -= timer.timeInterval
+        let pauseImage = UIImage(systemName: "pause.fill", withConfiguration: configSymbol)
 
         let timeString = count.minuteSecondMS
         timeLabel.text = timeString
+
+        runningTime()
 
         if count <= 0 && isWorkTime {
             timer.invalidate()
@@ -148,7 +167,7 @@ class ViewController: UIViewController {
             timeLabel.textColor = .yellow
             button.tintColor = .yellow
             animationCircular(startGradientColor: .yellow, endGradientColor: .orange)
-            button.setImage(playImage, for: .normal)
+            button.setImage(pauseImage, for: .normal)
         } else if count <= 0 && !isWorkTime {
             timer.invalidate()
             isStartButtonPressed = false
@@ -159,7 +178,7 @@ class ViewController: UIViewController {
             timeLabel.textColor = .systemMint
             button.tintColor = .systemMint
             animationCircular(startGradientColor: .systemMint, endGradientColor: .cyan)
-            button.setImage(playImage, for: .normal)
+            button.setImage(pauseImage, for: .normal)
         }
     }
 
@@ -175,7 +194,11 @@ class ViewController: UIViewController {
         let startAngle = -CGFloat.pi / 2
         let endAngle = startAngle + 2 * CGFloat.pi
 
-        let circularPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: center,
+                                        radius: radius,
+                                        startAngle: startAngle,
+                                        endAngle: endAngle,
+                                        clockwise: true)
 
         shapeLayer.path = circularPath.cgPath
         shapeLayer.lineWidth = lineWidth
@@ -205,7 +228,11 @@ class ViewController: UIViewController {
         let startAngle = -CGFloat.pi / 2
         let endAngle = startAngle + 2 * CGFloat.pi
 
-        let circularPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: center,
+                                        radius: radius,
+                                        startAngle: startAngle,
+                                        endAngle: endAngle,
+                                        clockwise: true)
 
         backgroundLayer.path = circularPath.cgPath
         backgroundLayer.lineWidth = lineWidth
@@ -224,7 +251,6 @@ class ViewController: UIViewController {
         circularProgressAnimation.isRemovedOnCompletion = true
         shapeLayer.add(circularProgressAnimation, forKey: "progressAnimation")
     }
-
 }
 
 
